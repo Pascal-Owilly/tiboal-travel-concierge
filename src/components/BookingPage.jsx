@@ -33,7 +33,7 @@ const BookingPage = () => {
             padding: '20px'
         }}>
             <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <h2>Booking Details for {selectedPackage.title}</h2>
+                <h2 className='text-light'>Booking Details for {selectedPackage.title}</h2>
                
             </div>
             <div style={{
