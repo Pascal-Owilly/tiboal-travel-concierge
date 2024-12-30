@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header nav ul li {
+    margin-right: 30px; /* Space between menu items */
+}
+
+.header nav a {
+    color: #ffffff; /* White */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+    font-family: 'Philosopher', sans-serif;
+}
+
+.header nav a:hover {
+    color: #FFD700; /* Gold on hover */
+    font-family: 'Philosopher', sans-serif;
+}
+
+/* Section Styles */
+.transportation-packages, .blog-preview, .contact-form, .adventure-packages, .testimonials {
+    padding: 40px 20px; 
+}
+
+.package, .blog-post, .testimonial {
+    background-color: #ffffff; /* White background for cards */
+    padding: 20px; /* Increased padding */
+    margin: 20px 0; /* Increased margin for better separation */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animations */
+}
+
+.package:hover, .blog-post:hover, .testimonial:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* WhatsApp Chat Styles */
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.whatsapp-chat img {
+    width: 70px; /* Increased size for visibility */
+    border-radius: 50%; /* Circle shape for icon */
+}
+

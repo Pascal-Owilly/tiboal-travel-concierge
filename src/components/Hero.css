@@ -1,0 +1,230 @@
+/* Google Fonts */
+/* Import Philosopher font */
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Philosopher', sans-serif; /* Use Philosopher font */
+    font-size: 2.5rem;
+}
+
+h1, h2, h3,h4, h5, h6 {
+  
+    font-family: 'Philosopher', sans-serif; /* Use Philosopher font */
+}
+
+p {
+
+    font-family: 'Philosopher', sans-serif; /* Use Philosopher font */
+}
+
+.cta-button {
+    font-family: 'Philosopher', sans-serif; /* Also apply to buttons if desired */
+    z-index: 2 !important;
+}
+
+.cta-buttons{
+    z-index: 10;
+}
+
+.slider {
+    width: 100%; /* Full width */
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Allow positioning of the overlay */
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Dark overlay */
+    z-index: 1; 
+}
+
+
+.cta-button {
+    background-color: #FFD700; /* Gold */
+    color: #003366; /* Primary dark blue text */
+    padding: 12px 24px; /* Increased button padding */
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    z-index: 999 !important;
+
+}
+
+.cta-button:hover {
+    background-color: #FFC107; /* Darker gold on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2; /* Ensure buttons are above the overlay */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Media Queries */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 24px; /* Smaller font size */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Smaller padding */
+        font-size: 14px; /* Smaller text */
+        z-index: 3 !important;
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .cta-button {
+        padding: 10px 22px;
+        font-size: 16px;
+        z-index: 3 !important;
+
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 18px;
+        z-index: 3 !important;
+
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    h1 {
+        font-size: 36px; /* Larger font size for larger screens */
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* Adjust padding for larger buttons */
+        font-size: 20px; /* Larger text */
+        z-index: 3 !important;
+
+    }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .hero-section {
+        height: 55vh; /* Reduce height for mobile devices */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Smaller padding */
+        font-size: 14px; /* Smaller text */
+        z-index: 3 !important;
+
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hero-section {
+        height: 55vh; /* Slightly taller for tablets */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 10px 22px;
+        font-size: 16px;
+        z-index: 3 !important;
+
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-section {
+        height: 50vh; /* Taller for medium devices */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 18px;
+        z-index: 3 !important;
+
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .hero-section {
+        height: 100vh; /* Full height for larger screens */
+    }
+
+    h1 {
+        font-size: 3rem; /* Larger font size for larger screens */
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* Adjust padding for larger buttons */
+        font-size: 20px; /* Larger text */
+        z-index: 3 !important;
+
+    }
+}
