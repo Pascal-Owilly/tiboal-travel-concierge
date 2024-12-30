@@ -1,17 +1,6 @@
 {
     "rewrites": [
-      { "source": "/old-path", "destination": "/new-path" },
-      { "source": "/another-old-path", "destination": "/another-new-path" }
-    ],
-    "redirects": [
-      { "source": "/old-page", "destination": "/new-page", "permanent": true }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
   }
+  
