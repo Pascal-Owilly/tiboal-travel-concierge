@@ -13,9 +13,10 @@
 
 .header nav a {
     color: #ffffff; /* White */
-    text-decoration: none;
+    text-decoration: none !important;
     transition: color 0.3s ease; /* Smooth color transition */
     font-family: 'Philosopher', sans-serif;
+
 }
 
 .header nav a:hover {

@@ -5,13 +5,15 @@ import AdventurePackages from './AdventurePackages';
 import TransportationPackages from './TransportationPackages';
 import Testimonials from './Testimonials';
 import BlogPreview from './BlogPreview';
+import MainSection from './MainSection';
 
 const Home = () => {
     return (
         <div>
             <HeroSection />
-            <AdventurePackages />
-            <TransportationPackages />
+            {/* <AdventurePackages />
+            <TransportationPackages /> */}
+            <MainSection />
             {/* <Testimonials />
             <BlogPreview /> */}
         </div>

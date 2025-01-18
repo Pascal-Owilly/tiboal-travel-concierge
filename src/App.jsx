@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import BookingPage from './components/BookingPage'; 
 import BookingTransport from './components/BookingTransport'; // Assuming this is your booking page component
+import SafariDetail from './components/SafariDetail'; // Assuming this is your booking page component
 
 const App = () => {
     return (
@@ -24,6 +25,8 @@ const App = () => {
               <Route path="/blog" element={<BlogPreview />} />
               <Route path="/booking/:packageId" element={<BookingPage />} /> 
               <Route path="/booking" element={<BookingTransport />} /> 
+              <Route path="/adventure-detail" element={<SafariDetail />} /> 
+
             </Routes>
           <Footer/>
       </div>

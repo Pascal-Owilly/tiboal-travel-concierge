@@ -1,65 +1,110 @@
 import React, { useState, useEffect } from 'react';
-import './Hero.css';
+import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaPlaneDeparture, FaCity, FaCar, FaUsers } from 'react-icons/fa';
 import nai1 from '../../src/assets/images/nai1.png';
 import nai2 from '../../src/assets/images/nai2.png';
 import nai3 from '../../src/assets/images/nai3.png';
 import nai4 from '../../src/assets/images/nai4.png';
 import nai5 from '../../src/assets/images/nai5.png';
+import nai6 from '../../src/assets/images/nai1.png';
+import nai7 from '../../src/assets/images/nai2.png';
+import nai8 from '../../src/assets/images/nai3.png';
+import nai9 from '../../src/assets/images/nai4.png';
+import nai10 from '../../src/assets/images/nai5.png';
+import './AdventurePackages.css'; // Import the CSS file for styling
+import './TransportationPackage.css';
+import '../App.css';
+import './styles.css';
+import './Hero.css';
 
 const images = [nai1, nai2, nai3, nai4, nai5];
 
-const HeroSection = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const CombinedSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [flippedCards, setFlippedCards] = useState({});
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000); // Change slide every 5 seconds
+  // Auto-change slides every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change slide every 5 seconds
 
-        return () => clearInterval(interval); // Cleanup on unmount
-    }, []);
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+  const handleCardClick = (id) => {
+    setFlippedCards((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
 
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
+  const adventurePackages = [
+    {
+      id: 'half-day',
+      title: 'Half-Day Safari Experience',
+      description: 'Perfect for layover travelers or short-stay visitors.',
+      price: '$80–$120',
+      image: nai6,
+    },
+    {
+      id: 'full-day',
+      title: 'Full-Day Safari',
+      description: 'A full-day adventure for families and small groups.',
+      price: '$150–$250',
+      image: nai7,
+    },
+    {
+      id: 'multi-day',
+      title: 'Multi-Day Safari Adventure',
+      description: 'Customizable itineraries for extended safari experiences.',
+      price: 'Starts at $600',
+      image: nai8,
+    },
+    {
+      id: 'cultural-explorer',
+      title: 'Cultural Explorer Package',
+      description: 'Immerse yourself in Kenyan culture and traditions.',
+      price: '$100–$150',
+      image: nai10,
+    },
+  ];
 
-    return (
-        <div className="hero-section">
-            <div
-                className="slider"
-                style={{
-                    backgroundImage: `url(${images[currentIndex]})`,
-                    backgroundSize: 'cover', // Ensure the background covers the entire div
-                    backgroundPosition: 'center', // Center the image
-                    position: 'relative', // For positioning the gradient
-                    transition: 'background-image 1s ease-in-out',
-                }}
-            >
-                <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
-                    zIndex: 1, // Ensure gradient is above the image
-                }} />
-                <h1 style={{ position: 'relative', zIndex: 2 }}>Explore Kenya’s Wild Side & Beyond!</h1>
-                <div className="cta-buttons" style={{ position: 'relative', zIndex: 2 }}>
-                    <a href="/transportation" className="cta-button">Plan Transport</a>
-                    <a href="/adventures" className="cta-button">Book Safari</a>
+  return (
+    <div className="combined-section">
+      {/* Hero Section with Carousel */}
+      <div className="hero-section">
+        <Carousel
+          activeIndex={currentIndex}
+          onSelect={(selectedIndex) => setCurrentIndex(selectedIndex)}
+          interval={5000}
+          controls={true}
+          indicators={false}
+          style={{ height: '100vh' }}
+        >
+          {images.map((image, index) => (
+            <Carousel.Item key={index}>
+              <img
+                className="d-block w-100"
+                src={image}
+                alt={`Banner ${index + 1}`}
+                style={{ objectFit: 'cover', height: '100vh' }}
+              />
+              <Carousel.Caption>
+                <h1>Explore Kenya’s Wild Side & Beyond!</h1>
+                <p>Discover amazing places, adventures, and transportation options all across Kenya.</p>
+                <div className="cta-buttons">
+                  <a href="/transportation" className="cta-button">Get around Nairobi</a>
+                  <a href="/adventures" className="cta-button">Explore Kenya</a>
                 </div>
-                {/* <button className="prev" onClick={prevSlide} style={{ position: 'relative', zIndex: 2 }}>❮</button>
-                <button className="next" onClick={nextSlide} style={{ position: 'relative', zIndex: 2 }}>❯</button> */}
-                <button className="prev" onClick={prevSlide}>❮</button>
-                <button className="next" onClick={nextSlide}>❯</button>
-            </div>
-        </div>
-    );
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
+    </div>
+  );
 };
 
-export default HeroSection;
+export default CombinedSection;

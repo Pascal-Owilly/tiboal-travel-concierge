@@ -59,7 +59,7 @@ const TransportationPackages = () => {
                 </div>
             </div>
 
-            <p className="cta"><strong>Reserve Your Ride Now</strong> and travel with ease!</p>
+            {/* <p className="cta"><strong>Reserve Your Ride Now</strong> and travel with ease!</p> */}
         </div>
     );
 };

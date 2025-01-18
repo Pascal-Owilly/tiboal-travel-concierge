@@ -9,18 +9,12 @@
     overflow: hidden;
 }
 
-h1 {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Philosopher', sans-serif; /* Use Philosopher font */
-    font-size: 2.5rem;
-}
 
 h1, h2, h3,h4, h5, h6 {
   
     font-family: 'Philosopher', sans-serif; /* Use Philosopher font */
+    color: white;
+    font-weight: 700;
 }
 
 p {
@@ -28,10 +22,6 @@ p {
     font-family: 'Philosopher', sans-serif; /* Use Philosopher font */
 }
 
-.cta-button {
-    font-family: 'Philosopher', sans-serif; /* Also apply to buttons if desired */
-    z-index: 2 !important;
-}
 
 .cta-buttons{
     z-index: 10;
@@ -50,26 +40,17 @@ p {
     position: relative; /* Allow positioning of the overlay */
 }
 
-.slider::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Dark overlay */
-    z-index: 1; 
-}
-
 
 .cta-button {
-    background-color: #FFD700; /* Gold */
+    /* font-family: 'Stix Two Text'; */
+    /* font-family: 'Source Code Variable'; */
+    font-family: 'Comic Sans MS';
+    background-color: #fff; /* Gold */
     color: #003366; /* Primary dark blue text */
-    padding: 12px 24px; /* Increased button padding */
+    padding: 5px 12px !important; /* Increased button padding */
     margin: 10px;
     text-decoration: none;
     border-radius: 5px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
     z-index: 999 !important;
 
